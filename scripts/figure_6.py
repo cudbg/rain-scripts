@@ -52,6 +52,6 @@ p += axis_labels("Corruption", "AUC", ykwargs=dict(lim=[0,1], breaks=[0.2, .5, .
 p += legend_bottom
 p += theme(**{"legend.position": esc("bottom")})
 ggsave("../assets/[AUCCR]MNISTJoinAggregation-1-7-((1, 2, 3, 4, 5), (6, 7, 8, 9, 0))-LogReg-10000.png",
-    p, width=4, height=2.5, scale=0.8)
+    p, postfix=postfix, width=4, height=2.5, scale=0.8)
 
 
