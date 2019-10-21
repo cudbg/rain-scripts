@@ -1,0 +1,8 @@
+id,proc,name,AUC,model
+0,MNISTCountAggregationComplaintProcessor,Complaint,0.8309355251326604,SimpleCNN
+2,MNISTCountAggregationComplaintProcessor,Tiresias,0.6178999759374881,SimpleCNN
+6,MNISTCountAggregationComplaintProcessor,Loss,0.4565101759096263,SimpleCNN
+10,MNISTCountAggregationComplaintProcessor,Loss,0.4007294740441483,SimpleCNN
+13,MNISTCountAggregationComplaintProcessor,Complaint,0.9775838705183569,LogReg
+17,MNISTCountAggregationComplaintProcessor,Loss,0.20065602006053618,LogReg
+21,MNISTCountAggregationComplaintProcessor,Tiresias,0.6078887045503477,LogReg

@@ -1,0 +1,10 @@
+id,proc,name,AUC,Corruption
+9,AdultProcessor,Complaint,0.3680385386500334,age
+11,AdultProcessor,Tiresias,0.0,age
+13,AdultProcessor,Loss,0.0,both
+21,AdultProcessor,Complaint,0.4829861884606816,both
+22,AdultProcessor,Tiresias,0.0,both
+31,AdultProcessor,Loss,0.0,gender
+42,AdultProcessor,Loss,0.0,age
+43,AdultProcessor,Tiresias,0.0,gender
+44,AdultProcessor,Complaint,0.0044553352639786145,gender

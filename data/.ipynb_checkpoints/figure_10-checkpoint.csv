@@ -1,0 +1,15 @@
+id,proc,name,complaint_percent,number_of_complaints
+0,MNISTCountPointComplaintProcessor,Complaint,0.09,95
+1,MNISTCountPointComplaintProcessor,Complaint,0.07,75
+2,MNISTCountPointComplaintProcessor,Complaint,0.03,32
+3,MNISTCountPointComplaintProcessor,Complaint,0.01,10
+4,MNISTCountPointComplaintProcessor,Complaint,0.1,106
+5,MNISTCountPointComplaintProcessor,Complaint,0.05,54
+6,MNISTCountPointComplaintProcessor,Complaint,0.13,136
+7,MNISTCountPointComplaintProcessor,Complaint,0.16,163
+14,MNISTCountPointComplaintProcessor,Complaint,0.19,193
+16,MNISTCountPointComplaintProcessor,Complaint,0.25,248
+24,MNISTCountPointComplaintProcessor,Complaint,0.3,292
+26,MNISTCountPointComplaintProcessor,Complaint,0.4,366
+29,MNISTCountPointComplaintProcessor,Complaint,0.5,444
+37,MNISTCountPointComplaintProcessor,Complaint,1.0,709

@@ -1,0 +1,10 @@
+id,proc,name,AUC,Corruption
+0,MNISTJoinRowsProcessor,Loss,0.3536176245278201,0.3
+1,MNISTJoinRowsProcessor,Loss,0.2687402641810514,0.5
+2,MNISTJoinRowsProcessor,Loss,0.04729329365854603,0.7
+3,MNISTJoinRowsProcessor,Complaint,0.8125808979563084,0.3
+4,MNISTJoinRowsProcessor,Tiresias,0.06776497107485317,0.3
+5,MNISTJoinRowsProcessor,Tiresias,0.21837995972695382,0.5
+6,MNISTJoinRowsProcessor,Complaint,0.9727270424640012,0.5
+7,MNISTJoinRowsProcessor,Complaint,0.9801814427263877,0.7
+8,MNISTJoinRowsProcessor,Tiresias,0.3544833532191634,0.7
