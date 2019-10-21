@@ -30,6 +30,6 @@ p += facet_grid(".~Complaint")
 p += axis_labels("K", "Recall", ykwargs=dict(breaks=[0.25, .5, .75]))
 p += legend_bottom
 p += theme(**{"legend.position": [.885, .34]})
-ggsave("../assets/[RC]MNISTCountWrongComplaint-1-7-LogReg-10000-0.3.png", p, width=6, height=2.5, scale=0.8)
+ggsave("../assets/[RC]MNISTCountWrongComplaint-1-7-LogReg-10000-0.3.png", p, postfix=postfix, width=6, height=2.5, scale=0.8)
 
 

@@ -25,4 +25,4 @@ p += axis_labels("", "AUC", "discrete",
 p += legend_bottom
 p += coord_flip()
 p += theme(**{"legend.position": [1, .37]})
-ggsave("../assets/[LogRegVSCNN]MNISTCountAggregationComplaint-1-7-10000-0.5.png", p, width=4, height=2.0, scale=0.8)
+ggsave("../assets/[LogRegVSCNN]MNISTCountAggregationComplaint-1-7-10000-0.5.png", p, postfix=postfix, width=4, height=2.0, scale=0.8)

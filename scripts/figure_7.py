@@ -13,7 +13,7 @@ p += geom_point()
 p += axis_labels("K", "Recall", ykwargs=dict(breaks=[0.25, .5, .75]))
 p += legend_bottom
 p += theme(**{"legend.position": [.35, .4]})
-ggsave("../assets/[RC]MNISTJoinRow-1-7-LogReg-10000-0.5.png", p, width=4, height=2.5, scale=0.8)
+ggsave("../assets/[RC]MNISTJoinRow-1-7-LogReg-10000-0.5.png", p, postfix=postfix, width=4, height=2.5, scale=0.8)
 
 
 

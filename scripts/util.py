@@ -6,6 +6,9 @@ from wuutils import *
 import pandas as pd
 
 names = {"Loss": "Loss", "Complaint": "Holistic", "Tiresias": "TwoStep", "SelfLoss": "InfLoss"}
+postfix = """
+  data$name  = factor(data$name, levels=c('TwoStep', 'Holistic', 'Loss', 'InfLoss'))
+"""
 
 
 def load_rc_data(fpath):
