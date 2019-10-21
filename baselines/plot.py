@@ -1,6 +1,9 @@
 from util import *
 
 def f(_, items):
+  """
+  aggregation function
+  """
   d = dict(items[0])
   print pluckone(items, "AUC")
   d['AUC'] = np.mean(pluckone(items, "AUC"))
@@ -9,6 +12,7 @@ def f(_, items):
 data = load_csv("fig6b.csv")
 replace_attr(data, "name", names.get)
 replace_attr(data, "AUC", float)
+# group by aggregation to average the AUCs
 data = split_and_run(data, ["proc", "name", "Corruption"], f)
 p = ggplot(data, aes(x="Corruption", y="AUC", group="name", color="name", shape="name"))
 p += geom_line(size=1)
@@ -16,6 +20,13 @@ p += geom_point(size=3)
 p += legend_bottom
 ggsave("[AUCCR]MNISTJoinAggregation-1-7-((1, 2, 3, 4, 5), (6, 7, 8, 9, 0))-LogReg-10000.png",
     p, width=6, height=3, scale=0.8)
+
+
+
+
+
+
+
 
 
 
@@ -42,6 +53,12 @@ p += geom_point()
 p += axis_labels("K", "Recall")
 p += legend_bottom
 ggsave("[RC]DBL-positive-0.5-3-LogReg-0.3.png", p, width=4, height=3, scale=0.8)
+
+
+
+
+
+
 
 
 
