@@ -23,12 +23,17 @@ for d in _data:
     ymin=ymin
   ))
 data.extend(_data)
+data = _data
 
 p = ggplot(data, aes(x='x', y='y', ymax='ymax', ymin='ymin', color='name', shape='name'))
+p += geom_hline(yintercept=y)
+p += geom_text(aes(y=1.05, x=550, label=esc("Agg Complaint") ), size=3.5, color=esc('black'))
+p += geom_text(aes(y=.7, x=550, label=esc("Point Complaint"), color='name' ), size=3.5)
 p += geom_line()
+p += geom_linerange()
 p += geom_point()
-p += axis_labels("Number of Complaints", "AUC")
-p += legend_bottom
-ggsave("../assets/[PointVSAgg]MNISTCountPointComplaint-1-7-from-LogReg-10000-0.1.png", p, width=4, height=2.5, scale=0.8)
+p += axis_labels("Number of Complaints", "AUC", ykwargs=dict(lim=[.25,1.1], breaks=[.25, .5, .75, 1]))
+p += legend_none
+ggsave("../assets/[PointVSAgg]MNISTCountPointComplaint-1-7-from-LogReg-10000-0.1.png", p, width=4, height=2.25, scale=0.8)
 
 
