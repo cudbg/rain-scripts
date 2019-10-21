@@ -23,8 +23,10 @@ def f(_, items):
   aggregation function
   """
   d = dict(items[0])
-  print pluckone(items, "AUC")
-  d['AUC'] = np.mean(pluckone(items, "AUC"))
+  aucs = pluckone(items, "AUC")
+  d['y'] = np.mean(aucs)
+  d['ymax'] = np.mean(aucs) + np.std(aucs)
+  d['ymin'] = np.mean(aucs) - np.std(aucs)
   return [d]
 
 data = load_csv("../data/figure_7b.csv")
@@ -32,8 +34,9 @@ replace_attr(data, "name", names.get)
 replace_attr(data, "AUC", float)
 # group by aggregation to average the AUCs
 data = split_and_run(data, ["proc", "name", "Corruption"], f)
-p = ggplot(data, aes(x="Corruption", y="AUC", group="name", color="name", shape="name"))
+p = ggplot(data, aes(x="Corruption", y="y", ymax='ymax', ymin='ymin', group="name", color="name", shape="name"))
 p += geom_line(size=1)
+p += geom_linerange(size=.5)
 p += geom_point(size=3)
 p += legend_bottom
 ggsave("../assets/[AUCCR]MNISTJoinRow-1-7-LogReg-10000.png",
