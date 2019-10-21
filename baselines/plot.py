@@ -26,12 +26,12 @@ replace_attr(_data, "name", names.get)
 data = []
 for _d in _data:
   recalls = list(map(float, _d['recall'][1:-1].split()))
-
   for k, recall in enumerate(recalls):
-    d = dict(_d)
-    d['recall'] = recall
-    d['k'] = k+1
-    data.append(d)
+    if k == 1 or k % 5 == 0 or k == len(recalls)-1: 
+      d = dict(_d)
+      d['recall'] = recall
+      d['k'] = k+1
+      data.append(d)
 
 func = "function(x) x / %s" % _d['ntruth']
 
