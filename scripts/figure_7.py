@@ -40,6 +40,6 @@ p += geom_linerange(size=.5)
 p += geom_point(size=3)
 p += legend_bottom
 ggsave("../assets/[AUCCR]MNISTJoinRow-1-7-LogReg-10000.png",
-    p, postfix=postfix, width=6, height=3, scale=0.8)
+    p, postfix=postfix, width=4, height=2.5, scale=0.8)
 
 

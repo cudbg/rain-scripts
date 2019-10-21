@@ -9,9 +9,9 @@ def f(_, items):
   return d
 
 data = load_csv("../data/figure_4.csv")
-data = split_and_run(data, ["proc", "Corruption"], f)
+data = split_and_run(data, ["proc", "corruption_rate"], f)
 
-p = ggplot(data, aes(x="Corruption", y="y", ymax='ymax', ymin='ymin'))
+p = ggplot(data, aes(x="corruption_rate", y="y", ymax='ymax', ymin='ymin'))
 p += geom_line()
 p += geom_linerange()
 p += geom_point()
