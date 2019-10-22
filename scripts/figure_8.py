@@ -15,6 +15,7 @@ def f(_, items):
   d['ymin'] = np.mean(recalls) - np.std(recalls)
   return [d]
   
+basedata = []
 data = []
 for name, rate in [("a", 0.1), ("b", 0.4), ("c", 0.8)]:
   _data = load_rc_data("../data/figure_8%s.csv" % name)
@@ -23,18 +24,19 @@ for name, rate in [("a", 0.1), ("b", 0.4), ("c", 0.8)]:
   _data = split_and_run(_data, ["proc", "name", "k"], f)
   data.extend(_data)
 
+  ntruth = _data[0]['ntruth']
+  for d in _data:
+    basedata.append(dict(
+      y = float(d['k']) / ntruth,
+      k = d['k'],
+      name = "Perfect",
+      rate = d['rate']
+    ))
 
-#func = "function(x) x / %s" % _d['ntruth']
+write_csv(data, "figure_8.csv")
+write_csv(basedata, "figure_8_base.csv")
 
-p = ggplot(data, aes(x="k", y="y", ymin="ymin", ymax="ymax", color="name", fill="name", shape="name"))
-#p += stat_function(fun=func, color=esc("grey"))
-p += geom_line()
-p += geom_point()
-p += geom_linerange()
-p += facet_grid(".~rate")
-p += axis_labels("K", "Recall", ykwargs=dict(breaks=[0.25, 0.5, 0.75], lim=[0,.8]))
-p += legend_bottom
-p += theme(**{"legend.position": [.84, .37]})
-ggsave("../assets/[Ambiguity]MNISTJoinAmbiguity-LogReg-10000-1-7-0.3.png", p, postfix=postfix, width=7, height=2.5, scale=0.8)
+os.system("R --no-save < figure_8.R")
+exit()
 
 

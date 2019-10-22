@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import csv
 from collections import *
@@ -9,6 +10,14 @@ names = {"Loss": "Loss", "Complaint": "Holistic", "Tiresias": "TwoStep", "SelfLo
 postfix = """
   data$name  = factor(data$name, levels=c('TwoStep', 'Holistic', 'Loss', 'InfLoss'))
 """
+
+def write_csv(data, fname):
+  keys = data[0].keys()
+
+  with open(fname, 'wb') as output_file:
+	dict_writer = csv.DictWriter(output_file, keys)
+	dict_writer.writeheader()
+	dict_writer.writerows(data)
 
 
 def load_rc_data(fpath):
