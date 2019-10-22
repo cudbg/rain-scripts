@@ -12,7 +12,7 @@ def f(_, items):
 
 
 data = []
-for name, rate in [("a", "correct"), ("b", "partial"), ("c", "wrong")]:
+for name, rate in [("a", "overshoot"), ("b", "partial"), ("c", "wrong")]:
   _data = load_rc_data("../data/figure_11%s.csv" % name)
   for d in _data:
     d['Complaint'] = rate.capitalize()
