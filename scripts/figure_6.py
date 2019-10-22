@@ -14,12 +14,12 @@ def f(_, items):
 
 #6a
 data = load_rc_data("../data/figure_6a.csv")
+func = "function(x) x / %s" % pluckone(data, "ntruth")[0]
 data = split_and_run(data, ["proc", "name", "k"], f)
 
-#func = "function(x) x / %s" % _d['ntruth']
 p = ggplot(data, aes(x="k", y="y", ymax='ymax', ymin='ymin',
   color="name", fill="name", shape="name"))
-#p += stat_function(fun=func, color=esc("grey"))
+p += stat_function(fun=func, color=esc("grey"))
 p += geom_line()
 p += geom_linerange(size=0.25)
 p += geom_point()
@@ -48,7 +48,7 @@ replace_attr(data, "name", names.get)
 replace_attr(data, "AUC", float)
 # group by aggregation to average the AUCs
 data = split_and_run(data, ["proc", "name", "Corruption"], f)
-p = ggplot(data, aes(x="Corruption", y="y", ymax='ymax', ymin='ymin',  group="name", color="name", shape="name"))
+p = ggplot(data, aes(x="Corruption", y="y", ymax='ymax', ymin='ymin', group="name", color="name", shape="name"))
 p += geom_line(size=1)
 p += geom_linerange(size=.5)
 p += geom_point(size=3)

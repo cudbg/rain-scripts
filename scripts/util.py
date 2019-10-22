@@ -19,7 +19,7 @@ def load_rc_data(fpath):
   # need to reshape into an actual table..
   data = []
   for _d in _data:
-    recalls = list(map(float, _d['recall'][1:-1].split()))
+    recalls = [float(digit) for digit in _d['recall'][1:-1].split()]
     block = int(len(recalls) / 10)
     for k, recall in enumerate(recalls):
       if k == 1 or k % block == 0 or k == len(recalls)-1: 
