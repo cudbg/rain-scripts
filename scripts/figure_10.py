@@ -32,7 +32,7 @@ p += geom_text(aes(y=.7, x=550, label=esc("Point Complaint"), color='name' ), si
 p += geom_line()
 p += geom_linerange()
 p += geom_point()
-p += axis_labels("Number of Complaints", "AUC", ykwargs=dict(lim=[.25,1.1], breaks=[.25, .5, .75, 1]))
+p += axis_labels("Number of Complaints", "AUC(CR)", ykwargs=dict(lim=[.25,1.1], breaks=[.25, .5, .75, 1]))
 p += legend_none
 ggsave("../assets/[PointVSAgg]MNISTCountPointComplaint-1-7-from-LogReg-10000-0.1.png", p, width=4, height=2.25, scale=0.8)
 

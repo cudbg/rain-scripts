@@ -14,7 +14,7 @@ p = p + geom_point()
 p = p + geom_linerange(size=.25)
 p = p + facet_grid(.~Complaint, scale="free_x")
 p = p + scale_x_continuous(name="K")
-p = p + scale_y_continuous(name="Recall", breaks=c(0.25, .5, .75))
+p = p + scale_y_continuous(name="Recall@k", breaks=c(0.25, .5, .75))
 p = p + coord_cartesian(ylim=c(0,1))
 p = p + theme_bw() 
 p = p + theme(

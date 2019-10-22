@@ -23,7 +23,7 @@ p += stat_function(fun=func, color=esc("grey"))
 p += geom_line()
 p += geom_linerange(size=0.25)
 p += geom_point()
-p += axis_labels("K", "Recall", ykwargs=dict(breaks=[0.25, .5, .75]))
+p += axis_labels("K", "Recall@k", ykwargs=dict(breaks=[0.25, .5, .75]))
 p += legend_bottom
 p += theme(**{"legend.position": [.35, .4]})
 ggsave("../assets/[RC]MNISTJoinAggregation-1-7-((1, 2, 3, 4, 5), (6, 7, 8, 9, 0))-LogReg-10000-0.5.png", p, 
@@ -52,7 +52,7 @@ p = ggplot(data, aes(x="Corruption", y="y", ymax='ymax', ymin='ymin', group="nam
 p += geom_line(size=1)
 p += geom_linerange(size=.5)
 p += geom_point(size=3)
-p += axis_labels("Corruption", "AUC", ykwargs=dict(lim=[0,1], breaks=[0.2, .5, .75]))
+p += axis_labels("Corruption", "AUC(CR)", ykwargs=dict(lim=[0,1], breaks=[0.2, .5, .75]))
 p += legend_bottom
 p += theme(**{"legend.position": esc("bottom")})
 ggsave("../assets/[AUCCR]MNISTJoinAggregation-1-7-((1, 2, 3, 4, 5), (6, 7, 8, 9, 0))-LogReg-10000.png",

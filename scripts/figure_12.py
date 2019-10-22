@@ -20,8 +20,8 @@ p += geom_point() + geom_line()
 #p += geom_linerange(position=position_dodge(width=0.7))
 #p += geom_point(size=2, position=position_dodge(width=0.7))
 p += facet_grid(".~model")
-p += axis_labels("Corruption Rate", "AUC",
-    ykwargs=dict(breaks=[0.25, 0.5, 0.75]))
+p += axis_labels("Corruption Rate", "AUC(CR)",
+    ykwargs=dict(breaks=[0.25, 0.5, 0.75, 1]))
 p += legend_bottom
 #p += coord_flip()
 #p += theme(**{"legend.position": [1, .37]})

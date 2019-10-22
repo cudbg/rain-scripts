@@ -33,7 +33,7 @@ p = ggplot(data, aes(x="name", y="AUC", ymin=0, ymax='AUC',
 p += geom_linerange(position=position_dodge(width=.75))
 p += geom_point(size=2, position=position_dodge(width=.75))
 p += facet_grid(".~Corruption")
-p += axis_labels("", "AUC", "discrete", ykwargs=dict(breaks=[.1,.2,.3,.4]))
+p += axis_labels("", "AUC(CR)", "discrete", ykwargs=dict(breaks=[.1,.2,.3,.4]))
 p += legend_bottom
 p += coord_flip()
 p += theme(**{"legend.position": [.48, .31]})

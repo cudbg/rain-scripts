@@ -8,3 +8,4 @@ python figure_6.py
 python figure_7.py
 python figure_8.py
 python figure_9.py
+python figure_10.py
