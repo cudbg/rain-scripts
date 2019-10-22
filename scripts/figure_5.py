@@ -20,6 +20,8 @@ p = ggplot(data, aes(x="name", y="y", color="key", fill="key"))
 p += geom_bar(stat=esc('identity'), position=esc("stack"))
 p += geom_text(aes(label=esc("46.1s"), y=4, x=esc("InfLoss")), color=esc("black"), fill=esc("black"))
 p += axis_labels("", "Runtime (s)", "discrete", "continuous")
+p += scale_fill_grey()
+p += scale_color_grey()
 p += legend_bottom
 p += coord_flip(ylim=[0,5])
 ggsave("../assets/[Time]DBL-positive-0.5-3-LogReg-0.5.png", p, width=4, height=2.5, scale=0.8)
