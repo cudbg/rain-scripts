@@ -14,7 +14,8 @@ data = split_and_run(data, ["proc", "Corruption"], f)
 p = ggplot(data, aes(x="Corruption", y="y", ymax='ymax', ymin='ymin'))
 p += geom_line()
 p += geom_linerange()
-p += geom_point()
+p = p + geom_point(color=esc("white"), size=2.5)
+p = p + geom_point(size=1.5)
 p += axis_labels("Corruption Rate", "F1 on Training Set", 
     ykwargs=dict(breaks=[0.25, 0.5, 0.75, 1]))
 p += legend_none
